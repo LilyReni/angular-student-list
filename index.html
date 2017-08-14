@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student List</title>
+	<link rel="stylesheet" type="text/css" href="css/style.min.css">
+	<!-- angular templating, it is empty without angular framework -->
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</head>
+<body ng-app = "student">
+	<div ng-controller="studentController">
+		<div class="student-list">
+
+			<div ng-repeat="student in students">
+				<!-- <h1>?</h1> -->
+				<div ng-click="getStudentDetail(student._id)">{{ student.firstName }}</div>
+			</div>
+
+		</div>
+
+		<div ng-show="clickedStudent" class="student-detail">
+			<span>First Name</span>
+			<p>{{ clickedStudent.firstName }}</p>
+			<span>Last Name</span>
+			<p>{{ clickedStudent.lastName }}</p>
+			<span>Age</span>
+			<p>{{ clickedStudent.age }}</p>
+			<span>School</span>
+			<p>{{ clickedStudent.school }}</p>
+		</div>
+
+
+	</div>
+
+</body>
+</html>
